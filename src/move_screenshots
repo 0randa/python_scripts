@@ -1,0 +1,13 @@
+import os
+import shutil
+
+username = "blah"
+source_dir = f"/Users/{username}/Desktop/"
+dest_dir = "/pathtodestination/"
+
+source_dir_list = os.listdir(source_dir)
+dest_dir_list = os.listdir(dest_dir)
+
+for file in source_dir_list:
+    if file.startswith('Screenshot') and file.endswith('.png'):
+        shutil.move(source_dir + file, dest_dir + file)
